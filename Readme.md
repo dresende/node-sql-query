@@ -1,6 +1,6 @@
 ## NodeJS SQL query builder
 
-[![Build Status](https://secure.travis-ci.org/dresende/node-sql-query.png)](http://travis-ci.org/dresende/node-sql-query)
+[![Build Status](https://secure.travis-ci.org/dresende/node-sql-query.png?branch=master)](http://travis-ci.org/dresende/node-sql-query)
 
 ## Install
 
