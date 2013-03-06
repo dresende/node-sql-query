@@ -7,3 +7,8 @@
 ```sh
 npm install sql-query
 ```
+
+## Dialects
+
+- MySQL
+- PostgreSQL
