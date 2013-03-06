@@ -6,3 +6,7 @@ common.Select = function () {
 
 	return q.select();
 };
+
+common.getDialect = function (dialect) {
+	return require('../lib/Dialects/' + dialect);
+};
