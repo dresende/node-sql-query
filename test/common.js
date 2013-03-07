@@ -7,6 +7,12 @@ common.Select = function () {
 	return q.select();
 };
 
+common.Remove = function () {
+	var q = new Query();
+
+	return q.remove();
+};
+
 common.getDialect = function (dialect) {
 	return require('../lib/Dialects/' + dialect);
 };
