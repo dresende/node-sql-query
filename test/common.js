@@ -13,6 +13,12 @@ common.Insert = function () {
 	return q.insert();
 };
 
+common.Update = function () {
+	var q = new Query();
+
+	return q.update();
+};
+
 common.Remove = function () {
 	var q = new Query();
 
