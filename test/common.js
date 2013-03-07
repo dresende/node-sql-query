@@ -7,6 +7,12 @@ common.Select = function () {
 	return q.select();
 };
 
+common.Insert = function () {
+	var q = new Query();
+
+	return q.insert();
+};
+
 common.Remove = function () {
 	var q = new Query();
 
