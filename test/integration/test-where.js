@@ -2,6 +2,16 @@ var common     = require('../common');
 var assert     = require('assert');
 
 assert.equal(
+	common.Select().from('t1').where().build(),
+	"SELECT * FROM `t1`"
+);
+
+assert.equal(
+	common.Select().from('t1').where(null).build(),
+	"SELECT * FROM `t1`"
+);
+
+assert.equal(
 	common.Select().from('t1').where({ col: 1 }).build(),
 	"SELECT * FROM `t1` WHERE (`col` = 1)"
 );
