@@ -17,6 +17,11 @@ assert.equal(
 );
 
 assert.equal(
+	common.Select().from('t1').where({ col: [ 1, 2, 3 ] }).build(),
+	"SELECT * FROM `t1` WHERE (`col` IN (1, 2, 3))"
+);
+
+assert.equal(
 	common.Select().from('t1').where({ col1: 1, col2: 2 }).build(),
 	"SELECT * FROM `t1` WHERE (`col1` = 1 AND `col2` = 2)"
 );
@@ -48,4 +53,44 @@ assert.equal(
 	               .from('table2', 'id', 'id')
 	               .where('table1', { col: 1 }, { col: 2 }).build(),
 	"SELECT * FROM `table1` AS `t1` JOIN `table2` AS `t2` ON `t2`.`id` = `t1`.`id` WHERE (`t1`.`col` = 1 AND `col` = 2)"
+);
+
+assert.equal(
+	common.Select().from('t1').where({ col: common.Query.gt(1) }).build(),
+	"SELECT * FROM `t1` WHERE (`col` > 1)"
+);
+
+assert.equal(
+	common.Select().from('t1').where({ col: common.Query.gte(1) }).build(),
+	"SELECT * FROM `t1` WHERE (`col` >= 1)"
+);
+
+assert.equal(
+	common.Select().from('t1').where({ col: common.Query.lt(1) }).build(),
+	"SELECT * FROM `t1` WHERE (`col` < 1)"
+);
+
+assert.equal(
+	common.Select().from('t1').where({ col: common.Query.lte(1) }).build(),
+	"SELECT * FROM `t1` WHERE (`col` <= 1)"
+);
+
+assert.equal(
+	common.Select().from('t1').where({ col: common.Query.eq(1) }).build(),
+	"SELECT * FROM `t1` WHERE (`col` = 1)"
+);
+
+assert.equal(
+	common.Select().from('t1').where({ col: common.Query.ne(1) }).build(),
+	"SELECT * FROM `t1` WHERE (`col` <> 1)"
+);
+
+assert.equal(
+	common.Select().from('t1').where({ col: common.Query.between('a', 'b') }).build(),
+	"SELECT * FROM `t1` WHERE (`col` BETWEEN 'a' AND 'b')"
+);
+
+assert.equal(
+	common.Select().from('t1').where({ col: common.Query.like('abc') }).build(),
+	"SELECT * FROM `t1` WHERE (`col` LIKE 'abc')"
 );

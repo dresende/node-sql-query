@@ -33,6 +33,11 @@ assert.equal(
 );
 
 assert.equal(
+	dialect.escapeVal([ 1, 'abc', 'a\'' ]),
+	"(1, 'abc', 'a''')"
+);
+
+assert.equal(
 	dialect.escapeVal(true),
 	"true"
 );
