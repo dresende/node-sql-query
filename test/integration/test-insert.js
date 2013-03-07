@@ -8,10 +8,10 @@ assert.equal(
 
 assert.equal(
 	common.Insert().into('table1').set({ col: 1 }).build(),
-	"INSERT INTO `table1` SET `col` = 1"
+	"INSERT INTO `table1` (`col`) VALUES (1)"
 );
 
 assert.equal(
-	common.Insert().into('table1').set({ col1: 1, col2: 2 }).build(),
-	"INSERT INTO `table1` SET `col1` = 1, `col2` = 2"
+	common.Insert().into('table1').set({ col1: 1, col2: 'a' }).build(),
+	"INSERT INTO `table1` (`col1`, `col2`) VALUES (1, 'a')"
 );
