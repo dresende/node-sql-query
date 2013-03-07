@@ -31,6 +31,12 @@ assert.equal(
 
 assert.equal(
 	common.Select().from('table1')
+	               .from('table2', 'id2', 'table1', 'id1').count(null, 'c').build(),
+	"SELECT COUNT(*) AS `c` FROM `table1` AS `t1` JOIN `table2` AS `t2` ON `t2`.`id2` = `t1`.`id1`"
+);
+
+assert.equal(
+	common.Select().from('table1')
 	               .from('table2', 'id2', 'table1', 'id1').count('id').build(),
 	"SELECT COUNT(`t2`.`id`) FROM `table1` AS `t1` JOIN `table2` AS `t2` ON `t2`.`id2` = `t1`.`id1`"
 );
