@@ -6,7 +6,7 @@
     "sql",
     "query"
   ],
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "repository": {
     "url": "http://github.com/dresende/node-sql-query"
