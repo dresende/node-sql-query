@@ -18,6 +18,16 @@ assert.equal(
 );
 
 assert.equal(
+	dialect.escapeVal(undefined),
+	'NULL'
+);
+
+assert.equal(
+	dialect.escapeVal(null),
+	'NULL'
+);
+
+assert.equal(
 	dialect.escapeVal(123),
 	"123"
 );
