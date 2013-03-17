@@ -4,17 +4,27 @@ var dialect    = common.getDialect('postgresql');
 
 assert.equal(
 	dialect.escapeId('col'),
-	"\"col\""
+	'"col"'
 );
 
 assert.equal(
 	dialect.escapeId('table', 'col'),
-	"\"table\".\"col\""
+	'"table"."col"'
 );
 
 assert.equal(
 	dialect.escapeId('table', 'co"l'),
-	"\"table\".\"co\"\"l\""
+	'"table"."co""l"'
+);
+
+assert.equal(
+	dialect.escapeVal(undefined),
+	'NULL'
+);
+
+assert.equal(
+	dialect.escapeVal(null),
+	'NULL'
 );
 
 assert.equal(
