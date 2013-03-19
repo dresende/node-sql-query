@@ -15,3 +15,8 @@ assert.equal(
 	common.Select().from('table1').avg().max('col1').min('col2').build(),
 	"SELECT AVG(MAX(`col1`)), MIN(`col2`) FROM `table1`"
 );
+
+assert.equal(
+	common.Select().from('table1').avg().max([ 'col1', 'col2' ]).min('col3').build(),
+	"SELECT AVG(MAX(`col1`, `col2`)), MIN(`col3`) FROM `table1`"
+);
