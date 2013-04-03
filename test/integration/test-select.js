@@ -12,7 +12,7 @@ assert.equal(
 );
 
 assert.equal(
-	common.Select().from('table1').select([ 'id', 'name' ]).build(),
+	common.Select().from('table1').select([ 'id', 'name' ]).build(),
 	"SELECT `id`, `name` FROM `table1`"
 );
 
