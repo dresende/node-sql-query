@@ -18,5 +18,5 @@ assert.equal(
 
 assert.equal(
 	common.Update().into('table1').set({ col1: 1, col2: 2 }).where({ id: 3 }).build(),
-	"UPDATE `table1` SET `col1` = 1, `col2` = 2 WHERE (`id` = 3)"
+	"UPDATE `table1` SET `col1` = 1, `col2` = 2 WHERE `id` = 3"
 );
