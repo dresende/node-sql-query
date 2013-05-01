@@ -18,6 +18,11 @@ assert.equal(
 );
 
 assert.equal(
+	dialect.escapeId('schema.table', 'col'),
+	'"schema"."table"."col"'
+);
+
+assert.equal(
 	dialect.escapeVal(undefined),
 	'NULL'
 );
