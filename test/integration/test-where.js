@@ -17,6 +17,11 @@ assert.equal(
 );
 
 assert.equal(
+	common.Select().from('table1').where({ col: 0 }).build(),
+	"SELECT * FROM `table1` WHERE `col` = 0"
+);
+
+assert.equal(
 	common.Select().from('table1').where({ col: 'a' }).build(),
 	"SELECT * FROM `table1` WHERE `col` = 'a'"
 );
