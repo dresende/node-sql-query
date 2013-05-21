@@ -22,6 +22,31 @@ assert.equal(
 );
 
 assert.equal(
+	common.Select().from('table1').where({ col: null }).build(),
+	"SELECT * FROM `table1` WHERE `col` IS NULL"
+);
+
+assert.equal(
+	common.Select().from('table1').where({ col: undefined }).build(),
+	"SELECT * FROM `table1` WHERE `col` IS NULL"
+);
+
+assert.equal(
+	common.Select().from('table1').where({ col: false }).build(),
+	"SELECT * FROM `table1` WHERE `col` = false"
+);
+
+assert.equal(
+	common.Select().from('table1').where({ col: "" }).build(),
+	"SELECT * FROM `table1` WHERE `col` = ''"
+);
+
+assert.equal(
+	common.Select().from('table1').where({ col: true }).build(),
+	"SELECT * FROM `table1` WHERE `col` = true"
+);
+
+assert.equal(
 	common.Select().from('table1').where({ col: 'a' }).build(),
 	"SELECT * FROM `table1` WHERE `col` = 'a'"
 );
