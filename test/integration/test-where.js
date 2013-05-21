@@ -37,6 +37,11 @@ assert.equal(
 );
 
 assert.equal(
+	common.Select().from('table1').where({ col: "" }).build(),
+	"SELECT * FROM `table1` WHERE `col` = ''"
+);
+
+assert.equal(
 	common.Select().from('table1').where({ col: true }).build(),
 	"SELECT * FROM `table1` WHERE `col` = true"
 );
