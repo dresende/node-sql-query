@@ -23,12 +23,12 @@ assert.equal(
 
 assert.equal(
 	common.Select().calculateFoundRows().from('table1').build(),
-	"SELECT SQL_CALC_FOUND_ROWS, * FROM `table1`"
+	"SELECT SQL_CALC_FOUND_ROWS * FROM `table1`"
 );
 
 assert.equal(
 	common.Select().calculateFoundRows().from('table1').select('id').build(),
-	"SELECT SQL_CALC_FOUND_ROWS, `id` FROM `table1`"
+	"SELECT SQL_CALC_FOUND_ROWS `id` FROM `table1`"
 );
 
 assert.equal(
