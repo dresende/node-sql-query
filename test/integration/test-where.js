@@ -27,6 +27,16 @@ assert.equal(
 );
 
 assert.equal(
+	common.Select().from('table1').where({ col: common.Query.eq(null) }).build(),
+	"SELECT * FROM `table1` WHERE `col` IS NULL"
+);
+
+assert.equal(
+	common.Select().from('table1').where({ col: common.Query.ne(null) }).build(),
+	"SELECT * FROM `table1` WHERE `col` IS NOT NULL"
+);
+
+assert.equal(
 	common.Select().from('table1').where({ col: undefined }).build(),
 	"SELECT * FROM `table1` WHERE `col` IS NULL"
 );
