@@ -2,6 +2,7 @@ var common = exports;
 var Query  = require('../');
 
 common.Query = Query;
+common.Text  = Query.Text;
 
 common.Select = function () {
 	var q = new (Query.Query)();
