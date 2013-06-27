@@ -12,6 +12,21 @@ assert.equal(
 );
 
 assert.equal(
+	common.Select().from('table1').select('id', 'name').as('label').build(),
+	"SELECT `id`, `name` AS `label` FROM `table1`"
+);
+
+assert.equal(
+	common.Select().from('table1').select('id', 'name').select('title').as('label').build(),
+	"SELECT `id`, `name`, `title` AS `label` FROM `table1`"
+);
+
+assert.equal(
+	common.Select().from('table1').select('id', 'name').as('label').select('title').build(),
+	"SELECT `id`, `name` AS `label`, `title` FROM `table1`"
+);
+
+assert.equal(
 	common.Select().from('table1').select([ 'id', 'name' ]).build(),
 	"SELECT `id`, `name` FROM `table1`"
 );
