@@ -93,3 +93,9 @@ assert.equal(
 	               .from('table2', 'id2', 'table1', 'id1').fun('AVG', 'col').build(),
 	"SELECT AVG(`t2`.`col`) FROM `table1` `t1` JOIN `table2` `t2` ON `t2`.`id2` = `t1`.`id1`"
 );
+
+assert.equal(
+    common.Select().from('table1')
+                   .from('table2',['id2a', 'id2b'], 'table1', ['id1a', 'id1b']).count('id').build(),
+    "SELECT COUNT(`t2`.`id`) FROM `table1` `t1` JOIN `table2` `t2` ON `t2`.`id2a` = `t1`.`id1a` AND `t2`.`id2b` = `t1`.`id1b`"
+);
