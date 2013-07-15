@@ -6,11 +6,14 @@
     "sql",
     "query"
   ],
-  "version": "0.1.4",
+  "version": "0.1.5",
   "license": "MIT",
   "repository": {
     "url": "http://github.com/dresende/node-sql-query"
   },
+  "contributors": [
+	{ "name" : "Benjamin Pannell", "email" : "admin@sierrasoftworks.com" }
+  ],
   "scripts": {
     "test": "make"
   },
