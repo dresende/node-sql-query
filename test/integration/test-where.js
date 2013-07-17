@@ -144,3 +144,23 @@ assert.equal(
 	common.Select().from('table1').where({ col: common.Query.like('abc') }).build(),
 	"SELECT * FROM `table1` WHERE `col` LIKE 'abc'"
 );
+
+assert.equal(
+	common.Select().from('table1').where({ __sql: [["LOWER(`stuff`) LIKE 'peaches'"]] }).build(),
+	"SELECT * FROM `table1` WHERE LOWER(`stuff`) LIKE 'peaches'"
+);
+
+assert.equal(
+	common.Select().from('table1').where({ __sql: [["LOWER(`stuff`) LIKE ?", ['peaches']]] }).build(),
+	"SELECT * FROM `table1` WHERE LOWER(`stuff`) LIKE 'peaches'"
+);
+
+assert.equal(
+	common.Select().from('table1').where({ __sql: [["LOWER(`stuff`) LIKE ? AND `number` > ?", ['peaches', 12]]] }).build(),
+	"SELECT * FROM `table1` WHERE LOWER(`stuff`) LIKE 'peaches' AND `number` > 12"
+);
+
+assert.equal(
+	common.Select().from('table1').where({ __sql: [["LOWER(`stuff`) LIKE ? AND `number` == ?", ['peaches']]] }).build(),
+	"SELECT * FROM `table1` WHERE LOWER(`stuff`) LIKE 'peaches' AND `number` == NULL"
+);
