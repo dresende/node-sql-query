@@ -141,6 +141,11 @@ assert.equal(
 );
 
 assert.equal(
+	common.Select().from('table1').where({ col: common.Query.not_between('a', 'b') }).build(),
+	"SELECT * FROM `table1` WHERE `col` NOT BETWEEN 'a' AND 'b'"
+);
+
+assert.equal(
 	common.Select().from('table1').where({ col: common.Query.like('abc') }).build(),
 	"SELECT * FROM `table1` WHERE `col` LIKE 'abc'"
 );
