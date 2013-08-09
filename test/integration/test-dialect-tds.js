@@ -14,7 +14,7 @@ assert.equal(
 
 assert.equal(
 	dialect.escapeId('table', 'co[l'),
-	"[table].[co[[l]"
+	"[table].[co[[]l]"
 );
 
 assert.equal(
