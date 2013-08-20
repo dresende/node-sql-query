@@ -49,10 +49,10 @@ assert.equal(
 
 assert.equal(
 	dialect.escapeVal(true),
-	"true"
+	"1"
 );
 
 assert.equal(
 	dialect.escapeVal(false),
-	"false"
+	"0"
 );
