@@ -27,8 +27,18 @@ assert.equal(
 );
 
 assert.equal(
+	common.Remove('tds').from('table1').limit(10).build(),
+	"DELETE TOP (10) FROM [table1]"
+);
+
+assert.equal(
 	common.Remove().from('table1').limit(10).offset(3).build(),
 	"DELETE FROM `table1` LIMIT 10 OFFSET 3"
+);
+
+assert.equal(
+	common.Remove('tds').from('table1').limit(10).offset(3).build(),
+	"DELETE TOP (10) FROM [table1]"
 );
 
 assert.equal(
@@ -37,6 +47,16 @@ assert.equal(
 );
 
 assert.equal(
+	common.Remove('tds').from('table1').order('col').limit(5).build(),
+	"DELETE TOP (5) FROM [table1]"
+);
+
+assert.equal(
 	common.Remove().from('table1').order('col1', 'A').order('col2', 'Z').limit(5).build(),
 	"DELETE FROM `table1` ORDER BY `col1` ASC, `col2` DESC LIMIT 5"
+);
+
+assert.equal(
+	common.Remove('tds').from('table1').order('col1', 'A').order('col2', 'Z').limit(5).build(),
+	"DELETE TOP (5) FROM [table1]"
 );

@@ -73,7 +73,7 @@ assert.equal(
 
 assert.equal(
 	common.Select().from('table1').where({ col: [] }).build(),
-	"SELECT * FROM `table1` WHERE FALSE"
+	"SELECT * FROM `table1` WHERE 1=0"
 );
 
 assert.equal(

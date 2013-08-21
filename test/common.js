@@ -4,26 +4,26 @@ var Query  = require('../');
 common.Query = Query;
 common.Text  = Query.Text;
 
-common.Select = function () {
-	var q = new (Query.Query)();
+common.Select = function (dialect) {
+	var q = new (Query.Query)(dialect);
 
 	return q.select();
 };
 
-common.Insert = function () {
-	var q = new (Query.Query)();
+common.Insert = function (dialect) {
+	var q = new (Query.Query)(dialect);
 
 	return q.insert();
 };
 
-common.Update = function () {
-	var q = new (Query.Query)();
+common.Update = function (dialect) {
+	var q = new (Query.Query)(dialect);
 
 	return q.update();
 };
 
-common.Remove = function () {
-	var q = new (Query.Query)();
+common.Remove = function (dialect) {
+	var q = new (Query.Query)(dialect);
 
 	return q.remove();
 };
