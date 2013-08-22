@@ -43,6 +43,11 @@ assert.equal(
 );
 
 assert.equal(
+	dialect.escapeVal(Infinity),
+	"'Infinity'"
+);
+
+assert.equal(
 	dialect.escapeVal('abc'),
 	"'abc'"
 );
