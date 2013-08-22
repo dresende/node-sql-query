@@ -38,6 +38,11 @@ assert.equal(
 );
 
 assert.equal(
+	dialect.escapeVal(NaN),
+	"'NaN'"
+);
+
+assert.equal(
 	dialect.escapeVal('abc'),
 	"'abc'"
 );
