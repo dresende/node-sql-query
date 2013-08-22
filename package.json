@@ -1,32 +1,30 @@
 {
-  "author": "Diogo Resende <dresende@thinkdigital.pt>",
-  "name": "sql-query",
-  "description": "NodeJS SQL query builder",
-  "keywords": [
-    "sql",
-    "query"
-  ],
-  "version": "0.1.11",
-  "license": "MIT",
-  "repository": {
-    "url": "http://github.com/dresende/node-sql-query"
-  },
-  "contributors": [
-	{ "name" : "Benjamin Pannell", "email" : "admin@sierrasoftworks.com" }
-  ],
-  "scripts": {
-    "test": "make"
-  },
-  "main": "./lib/Query",
-  "scripts": {
-    "test": "make test"
-  },
-  "engines": {
-    "node": "*"
-  },
-  "analyse": false,
-  "devDependencies": {
-    "utest": "0.0.6",
-    "urun": "0.0.6"
-  }
+	"author": "Diogo Resende <dresende@thinkdigital.pt>",
+	"name": "sql-query",
+	"description": "NodeJS SQL query builder",
+	"keywords": [
+		"sql",
+		"query"
+  	],
+	"version": "0.1.11",
+	"license": "MIT",
+	"repository": {
+		"url": "http://github.com/dresende/node-sql-query"
+	},
+	"contributors": [
+		{ "name" : "Benjamin Pannell", "email" : "admin@sierrasoftworks.com" },
+		{ "name" : "Arek W" },
+	],
+	"scripts": {
+		"test": "make"
+	},
+	"main": "./lib/Query",
+	"engines": {
+		"node": "*"
+	},
+	"analyse": false,
+	"devDependencies": {
+		"utest": "0.0.6",
+		"urun": "0.0.6"
+	}
 }
