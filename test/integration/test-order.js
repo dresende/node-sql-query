@@ -32,6 +32,6 @@ assert.equal(
 );
 
 assert.equal(
-	common.Select().from('table1').order('ST_Distance(??, ST_GeomFromText(?,4326))', ['geopoint', 'POINT(-72.1235 42.3521)']).build(),
+	common.Select().from('table1').order('ST_Distance(??, ST_GeomFromText(?,4326))', ['geopoint', 'POINT(-68.3394 27.5578)']).build(),
 	"SELECT * FROM `table1` ORDER BY ST_Distance(`geopoint`, ST_GeomFromText('POINT(-68.3394 27.5578)',4326))"
 );
