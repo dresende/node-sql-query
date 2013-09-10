@@ -1,6 +1,8 @@
-var common     = require('../common');
-var assert     = require('assert');
-var dialect    = common.getDialect('mysql');
+var common         = require('../common');
+var assert         = require('assert');
+var dialect        = common.getDialect('mysql');
+var d              = new Date(1378322111133);
+var tzOffsetMillis = (d.getTimezoneOffset() * 60 * 1000);
 
 assert.equal(
 	dialect.escapeId('col'),
@@ -67,27 +69,26 @@ assert.equal(
 	"false"
 );
 
-
-// Dates and Timezones
-var d = new Date(1378322111133);
-var tzOffsetMillis = (d.getTimezoneOffset() * 60 * 1000);
-
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime() + tzOffsetMillis)),
 	"'2013-09-04 19:15:11'"
 );
+
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime()), 'Z'),
 	"'2013-09-04 19:15:11'"
 );
+
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime()), '-0000'),
 	"'2013-09-04 19:15:11'"
 );
+
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime()), '-0400'),
 	"'2013-09-04 15:15:11'"
 );
+
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime())),
 	dialect.escapeVal(new Date(d.getTime()), 'local')

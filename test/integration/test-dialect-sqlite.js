@@ -1,6 +1,8 @@
-var common     = require('../common');
-var assert     = require('assert');
-var dialect    = common.getDialect('sqlite');
+var common         = require('../common');
+var assert         = require('assert');
+var dialect        = common.getDialect('sqlite');
+var d              = new Date(1378322111133);
+var tzOffsetMillis = (d.getTimezoneOffset() * 60 * 1000);
 
 assert.equal(
 	dialect.escapeId('col'),
@@ -65,4 +67,29 @@ assert.equal(
 assert.equal(
 	dialect.escapeVal(false),
 	"0"
+);
+
+assert.equal(
+	dialect.escapeVal(new Date(d.getTime() + tzOffsetMillis)),
+	"'2013-09-04T19:15:11.133Z'"
+);
+
+assert.equal(
+	dialect.escapeVal(new Date(d.getTime()), 'Z'),
+	"'2013-09-04T19:15:11.133Z'"
+);
+
+assert.equal(
+	dialect.escapeVal(new Date(d.getTime()), '-0000'),
+	"'2013-09-04T19:15:11.133Z'"
+);
+
+assert.equal(
+	dialect.escapeVal(new Date(d.getTime()), '-0400'),
+	"'2013-09-04T15:15:11.133Z'"
+);
+
+assert.equal(
+	dialect.escapeVal(new Date(d.getTime())),
+	dialect.escapeVal(new Date(d.getTime()), 'local')
 );
