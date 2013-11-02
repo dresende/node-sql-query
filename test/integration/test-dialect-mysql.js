@@ -71,22 +71,22 @@ assert.equal(
 
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime() + tzOffsetMillis)),
-	"'2013-09-04 19:15:11'"
+	"'2013-09-04 19:15:11.133'"
 );
 
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime()), 'Z'),
-	"'2013-09-04 19:15:11'"
+	"'2013-09-04 19:15:11.133'"
 );
 
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime()), '-0000'),
-	"'2013-09-04 19:15:11'"
+	"'2013-09-04 19:15:11.133'"
 );
 
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime()), '-0400'),
-	"'2013-09-04 15:15:11'"
+	"'2013-09-04 15:15:11.133'"
 );
 
 assert.equal(
