@@ -16,6 +16,4 @@ npm install sql-query
 
 ## About
 
-This module is used by [ORM](http://dresende.github.com/node-orm2) to build SQL queries in the different supported
-dialects. Sorry there is no API documentation but there are a couple of tests you can read and find out how to use
-it if you want.
+This module is used by [ORM](http://dresende.github.com/node-orm2) to build SQL queries in the different supported dialects. Sorry there is no API documentation but there are a couple of tests you can read and find out how to use it if you want.
