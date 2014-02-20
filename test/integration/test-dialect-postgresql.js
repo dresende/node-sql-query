@@ -26,7 +26,7 @@ assert.equal(
 
 assert.equal(
 	dialect.escapeVal(undefined),
-	'NULL'
+	'DEFAULT'
 );
 
 assert.equal(
