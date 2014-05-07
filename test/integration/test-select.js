@@ -37,6 +37,13 @@ assert.equal(
 );
 
 assert.equal(
+	common.Select().from('table1').select(
+		['abc','def', { a: 'ghi', sql: 'SOMEFUNC(ghi)' }]
+	).build(),
+	"SELECT `abc`, `def`, (SOMEFUNC(ghi)) AS `ghi` FROM `table1`"
+);
+
+assert.equal(
 	common.Select().calculateFoundRows().from('table1').build(),
 	"SELECT SQL_CALC_FOUND_ROWS * FROM `table1`"
 );
