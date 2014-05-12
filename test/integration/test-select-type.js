@@ -12,6 +12,11 @@ assert.equal(
 );
 
 assert.equal(
+  common.Select().from('table1').fun('dbo.fnBalance', [ 80, null, null], 'balance').build(),
+  "SELECT DBO.FNBALANCE(80, NULL, NULL) AS `balance` FROM `table1`"
+);
+
+assert.equal(
 	common.Select().from('table1').fun('myfun', [ 'col1', 'col2'], 'alias').build(),
 	"SELECT MYFUN(`col1`, `col2`) AS `alias` FROM `table1`"
 );
