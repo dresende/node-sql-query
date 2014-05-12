@@ -9,7 +9,11 @@ common.Select = function () {
 
 	return q.select();
 };
+common.Create = function(){
+    var q = new (Query.Query)();
 
+    return q.create();
+};
 common.Insert = function () {
 	var q = new (Query.Query)();
 
