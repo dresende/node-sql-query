@@ -33,3 +33,16 @@ assert.equal(
 	Helpers.escapeQuery(Dialect, "SELECT * FROM abc WHERE LOWER(abc.??) LIKE ? AND ?? == ?", ['stuff', 'peaches', 'number']),
 	"SELECT * FROM abc WHERE LOWER(abc.`stuff`) LIKE 'peaches' AND `number` == NULL"
 );
+
+// Should match at most 2 '?' at a time
+assert.equal(
+	Helpers.escapeQuery(Dialect, "?????", ['a', 'b', 'c']),
+	"`a``b`'c'"
+);
+
+// Should not modify provided array
+var arr = ['a', 'b', 'c'];
+assert.equal(
+	arr.join(','),
+	'a,b,c'
+)
