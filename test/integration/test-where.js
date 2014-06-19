@@ -156,6 +156,11 @@ assert.equal(
 );
 
 assert.equal(
+	common.Select().from('table1').where({ col: common.Query.not_like('abc') }).build(),
+	"SELECT * FROM `table1` WHERE `col` NOT LIKE 'abc'"
+);
+
+assert.equal(
 	common.Select().from('table1').where({ col: common.Query.not_in([ 1, 2, 3 ]) }).build(),
 	"SELECT * FROM `table1` WHERE `col` NOT IN (1, 2, 3)"
 );
