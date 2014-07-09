@@ -13,6 +13,7 @@ npm install sql-query
 - MySQL
 - PostgreSQL
 - SQLite
+- MSSQL
 
 ## About
 
