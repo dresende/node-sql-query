@@ -1,5 +1,6 @@
 *.sublime-*
 *.njsproj
+.idea
 .DS_Store
 node_modules
 test.js
