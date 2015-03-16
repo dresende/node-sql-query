@@ -75,6 +75,11 @@ assert.equal(
 );
 
 assert.equal(
+	dialect.escapeVal({hello:'world', loneliest: { number: 1 }}),
+	'\'{"hello":"world","loneliest":{"number":1}}\''
+);
+
+assert.equal(
 	dialect.escapeVal(new Date(d.getTime() + tzOffsetMillis)),
 	"'2013-09-04T19:15:11.133Z'"
 );
