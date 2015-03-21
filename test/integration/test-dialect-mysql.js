@@ -93,3 +93,8 @@ assert.equal(
 	dialect.escapeVal(new Date(d.getTime())),
 	dialect.escapeVal(new Date(d.getTime()), 'local')
 );
+
+assert.equal(
+	dialect.defaultValuesStmt,
+	"VALUES()"
+);

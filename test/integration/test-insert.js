@@ -7,6 +7,11 @@ assert.equal(
 );
 
 assert.equal(
+  common.Insert().into('table1').set({}).build(),
+  "INSERT INTO `table1` VALUES()"
+);
+
+assert.equal(
 	common.Insert().into('table1').set({ col: 1 }).build(),
 	"INSERT INTO `table1` (`col`) VALUES (1)"
 );
