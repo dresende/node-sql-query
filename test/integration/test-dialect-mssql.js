@@ -98,3 +98,9 @@ assert.equal(
   dialect.defaultValuesStmt,
   "DEFAULT VALUES"
 );
+
+//Assert that mssql is configured to use the SELECT TOP as a contruct for limit
+assert.equal(
+  dialect.limitAsTop,
+  true
+);
