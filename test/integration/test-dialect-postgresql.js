@@ -103,3 +103,9 @@ assert.equal(
 	dialect.defaultValuesStmt,
 	"DEFAULT VALUES"
 );
+
+//For all dialects but mssql limitAsTop should be undefined or false
+assert.equal(
+  dialect.limitAsTop || false,
+  false
+);
