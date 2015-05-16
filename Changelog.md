@@ -1,3 +1,7 @@
+### v0.1.26 - 16 May 2015
+
+- Add support for SELECT TOP construct for mssql dialect for limit (#41)
+
 ### v0.1.25 - 22 Mar 2015
 
 - Added support for left/right joins (#22)
