@@ -22,8 +22,8 @@ Sorry the API documentation is not complete. There are tests in ./test/integrati
 
 
 #Usage
-
-	var sqlQuery = require('sql-query').Query();
+	var sql = require('sql-query'),
+		sqlQuery = sql.Query();
 
 ##Create
 
@@ -244,13 +244,13 @@ Sorry the API documentation is not complete. There are tests in ./test/integrati
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.eq(null) })
+		.where({ col: sql.eq(null) })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` IS NULL"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.ne(null) })
+		.where({ col: sql.ne(null) })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` IS NOT NULL"
 
@@ -342,67 +342,67 @@ Sorry the API documentation is not complete. There are tests in ./test/integrati
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.gt(1) })
+		.where({ col: sql.gt(1) })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` > 1"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.gte(1) })
+		.where({ col: sql.gte(1) })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` >= 1"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.lt(1) })
+		.where({ col: sql.lt(1) })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` < 1"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.lte(1) })
+		.where({ col: sql.lte(1) })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` <= 1"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.eq(1) })
+		.where({ col: sql.eq(1) })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` = 1"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.ne(1) })
+		.where({ col: sql.ne(1) })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` <> 1"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.between('a', 'b') })
+		.where({ col: sql.between('a', 'b') })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` BETWEEN 'a' AND 'b'"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.not_between('a', 'b') })
+		.where({ col: sql.not_between('a', 'b') })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` NOT BETWEEN 'a' AND 'b'"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.like('abc') })
+		.where({ col: sql.like('abc') })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` LIKE 'abc'"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.not_like('abc') })
+		.where({ col: sql.not_like('abc') })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` NOT LIKE 'abc'"
 
 	sqlSelect
 		.from('table1')
-		.where({ col: sqlQuery.Query.not_in([ 1, 2, 3 ]) })
+		.where({ col: sql.not_in([ 1, 2, 3 ]) })
 		.build();
 	"SELECT * FROM `table1` WHERE `col` NOT IN (1, 2, 3)"
 
