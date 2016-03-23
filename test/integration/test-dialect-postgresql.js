@@ -65,6 +65,11 @@ assert.equal(
 );
 
 assert.equal(
+	dialect.escapeVal({foo:1, foo:'1', 'bar':"a", "bar":"a"}),
+	'\'{"foo":"1","bar":"a"}\''
+);
+
+assert.equal(
 	dialect.escapeVal([ {'foo':123}, {bar:"json"}, {"zed":[1,5] }]),
 	'\'[{"foo":123},{"bar":"json"},{"zed":[1,5]}]\''
 );
