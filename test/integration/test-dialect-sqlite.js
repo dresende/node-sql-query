@@ -71,7 +71,7 @@ assert.equal(
 
 assert.equal(
 	dialect.escapeVal(new Date(d.getTime() + tzOffsetMillis)),
-	"'2013-09-04T19:15:11.133Z'"
+	"'2013-09-04 19:15:11.133'"
 );
 
 assert.equal(
