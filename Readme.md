@@ -24,7 +24,7 @@ Sorry the API documentation is not complete. There are tests in ./test/integrati
 # Usage
 ```js
 var sql = require('sql-query'),
-  sqlQuery = sql.Query();
+  sqlQuery = sql.Query(); //for dialect: sql.Query('postgresql')
 ```
 
 ## Create
