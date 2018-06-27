@@ -1,3 +1,7 @@
+### v0.1.27 - 27 Jun 2018
+
+- Handle objects & symbols causing crash in driver 'escapeVal' (#54)
+
 ### v0.1.26 - 16 May 2015
 
 - Add support for SELECT TOP construct for mssql dialect for limit (#41)
