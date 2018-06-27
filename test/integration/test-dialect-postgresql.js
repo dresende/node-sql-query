@@ -75,6 +75,16 @@ assert.equal(
 );
 
 assert.equal(
+  dialect.escapeVal({ key: 'value' }),
+  "'{\"key\":\"value\"}'"
+);
+
+assert.equal(
+	dialect.escapeVal(Symbol("why does this exist")),
+	"NULL"
+)
+
+assert.equal(
 	dialect.escapeVal(new Date(d.getTime() + tzOffsetMillis)),
 	"'2013-09-04 19:15:11.133'"
 );
