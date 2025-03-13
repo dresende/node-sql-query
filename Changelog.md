@@ -1,3 +1,7 @@
+### v0.1.28 - 13 March 2025
+
+- Replace deprecated (in Node.js 22) `util.isDate(val)` with `val instanceof Date`
+
 ### v0.1.27 - 27 Jun 2018
 
 - Handle objects & symbols causing crash in driver 'escapeVal' (#54)
